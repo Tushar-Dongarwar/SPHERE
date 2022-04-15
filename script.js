@@ -1,22 +1,18 @@
 const textureLoader = new THREE.TextureLoader()
 
-const normalTexture = textureLoader.load('./earth.jpeg')
-const normalTextureSUN = textureLoader.load('./sun.jpeg')
+const normalTexture = textureLoader.load('./Earth.jpeg')
+const normalTextureSUN = textureLoader.load('./Sun.jpeg')
 
-// Debug
-
-
-// Canvas
 const canvas = document.querySelector('canvas.webgl')
 
-// Scene
+
 const scene = new THREE.Scene()
 
-// Objects
+
 const SUNgeometry = new THREE.SphereBufferGeometry(.4, 64, 64)
 const EARTHgeometry = new THREE.SphereBufferGeometry(.2, 64, 64)
 
-// Materials
+
 
 const EARTHmaterial = new THREE.MeshStandardMaterial()
 EARTHmaterial.metalness = 0
@@ -52,39 +48,6 @@ scene.add(pointLight)
 const ambientLight = new THREE.AmbientLight(0xffffff, 1)
 scene.add(ambientLight)
 
-//Light 2
-
-// const pointLight2 = new THREE.PointLight(0xff0000, 2)
-// pointLight2.position.set(-1.86,1,-1.65)
-// pointLight2.intensity = 10
-
-// scene.add(pointLight2)
-
-//Light 3
-
-// const pointLight3 = new THREE.PointLight(0xe1ff, 2)
-// pointLight3.position.set(2.13,-3,-1.98)
-// pointLight3.intensity = 6.8
-
-// scene.add(pointLight3)
-
-// const light2Color = {
-//     color: 0xff0000
-// }
-
-// light2.addColor(light2Color, 'color')
-//     .onChange(() =>{
-//         pointLight3.color.set(light2Color.color)
-//     })
-
-// const pointLightHelper2 = new THREE.PointLightHelper(pointLight3, 1)
-// scene.add(pointLightHelper2)
-
-
- 
-/**
- * Sizes
- */
 
 const sizes = {
     width: window.innerWidth,
@@ -116,9 +79,7 @@ camera.position.y = 0
 camera.position.z = 2
 scene.add(camera)
 
-// Controls
-// const controls = new OrbitControls(camera, canvas)
-// controls.enableDamping = true
+
 
 /**
  * Renderer
