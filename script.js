@@ -1,7 +1,7 @@
 
 const textureLoader = new THREE.TextureLoader()
 
-const normalTexture = textureLoader.load('./Earth.jpg')
+const normalTexture = textureLoader.load('./Earth.jpeg')
 const normalTextureSUN = textureLoader.load('./Sun.jpeg')
 
 
