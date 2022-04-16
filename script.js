@@ -2,7 +2,7 @@
 const textureLoader = new THREE.TextureLoader()
 
 const normalTexture = textureLoader.load('./8k_earth_daymap.jpg')
-const normalTextureSUN = textureLoader.load('./Sun.jpeg')
+const normalTextureSUN = textureLoader.load('./8k_sun.jpg')
 
 
 const canvas = document.querySelector('canvas.webgl')
