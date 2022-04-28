@@ -10,8 +10,8 @@ const normaltextureVenus = textureLoader.load('./8k_venus_surface.jpg')
 const normaltextureSaturn = textureLoader.load('./8k_saturn.jpg')
 const normaltextureMars = textureLoader.load('./8k_mars.jpg')
 const normaltextureJupiter = textureLoader.load('./8k_jupiter.jpg')
-const normaltextureUranus = textureLoader.load('./8k_uranus.jpg')
-const normaltextureNeptune = textureLoader.load('./8k_neptune.jpg')
+const normaltextureUranus = textureLoader.load('./2k_uranus.jpg')
+const normaltextureNeptune = textureLoader.load('./2k_neptune.jpg')
 
 
 // Debug
