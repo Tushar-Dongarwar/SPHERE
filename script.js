@@ -19,29 +19,29 @@ export default function Home() {
     test.animate();
 
     const sunGeometry = new THREE.SphereGeometry(8);
-    const sunTexture = new THREE.TextureLoader().load("8k_sun.jpeg");
+    const sunTexture = new THREE.TextureLoader().load("8k_sun.jpg");
     const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture });
     const sunMesh = new THREE.Mesh(sunGeometry, sunMaterial);
     const solarSystem = new THREE.Group();
     solarSystem.add(sunMesh);
     test.scene.add(solarSystem);
 
-    const mercury = new Planet(2, 16, "8k_mercury.png");
+    const mercury = new Planet(2, 16, "8k_mercury.jpg");
     const mercuryMesh = mercury.getMesh();
     let mercurySystem = new THREE.Group();
     mercurySystem.add(mercuryMesh);
 
-    const venus = new Planet(3, 32, "8k_venus.jpeg");
+    const venus = new Planet(3, 32, "8k_venus.jpg");
     const venusMesh = venus.getMesh();
     let venusSystem = new THREE.Group();
     venusSystem.add(venusMesh);
 
-    const earth = new Planet(4, 48, "8k_earth.jpeg");
+    const earth = new Planet(4, 48, "8k_earth.jpg");
     const earthMesh = earth.getMesh();
     let earthSystem = new THREE.Group();
     earthSystem.add(earthMesh);
 
-    const mars = new Planet(3, 64, "8k_mars.jpeg");
+    const mars = new Planet(3, 64, "8k_mars.jpg");
     const marsMesh = mars.getMesh();
     let marsSystem = new THREE.Group();
     marsSystem.add(marsMesh);
