@@ -1,93 +1,54 @@
 
-
-// Loading
 const textureLoader = new THREE.TextureLoader()
 
-const normalTexture = textureLoader.load('NormalMap.png')
+const normalTexture = textureLoader.load('./8k_earth_daymap.jpg')
+const normalTextureSUN = textureLoader.load('./8k_sun.jpg')
 
-// Debug
 
-
-// Canvas
 const canvas = document.querySelector('canvas.webgl')
 
 // Scene
 const scene = new THREE.Scene()
 
-// Objects
-const geometry = new THREE.SphereBufferGeometry(.5, 64, 64)
 
-// Materials
+const SUNgeometry = new THREE.SphereBufferGeometry(.4, 64, 64)
+const EARTHgeometry = new THREE.SphereBufferGeometry(.2, 64, 64)
 
-const material = new THREE.MeshStandardMaterial()
-material.metalness = 0.7
-material.roughness = 0.2
-material.normalMap = normalTexture;
 
-material.color = new THREE.Color(0x292929)
+const EARTHmaterial = new THREE.MeshStandardMaterial()
+EARTHmaterial.metalness = 0
+EARTHmaterial.roughness = 0.4
+EARTHmaterial.map = normalTexture;
+
+
+const SUNmaterial = new THREE.MeshStandardMaterial()
+SUNmaterial.transparent = true
+SUNmaterial.opacity = 0.9
+SUNmaterial.metalness = 0
+SUNmaterial.roughness = 0.3
+SUNmaterial.map = normalTextureSUN;
+SUNmaterial.color = new THREE.Color( 0xfff917 )
+
 
 // Mesh
-const sphere = new THREE.Mesh(geometry,material)
+const sphereEARTH = new THREE.Mesh(EARTHgeometry,EARTHmaterial)
+
+
+const sphere = new THREE.Mesh(SUNgeometry,SUNmaterial)
 scene.add(sphere)
+sphere.add(sphereEARTH)
 
 // Lights
 
-const pointLight = new THREE.PointLight(0xffffff, 0.1)
-pointLight.position.x = 2
-pointLight.position.y = 3
-pointLight.position.z = 4
+const pointLight = new THREE.PointLight(0xffffff, 3)
+pointLight.position.x = 0
+pointLight.position.y = 0
+pointLight.position.z = 0
 scene.add(pointLight)
 
-//Light 2
+const ambientLight = new THREE.AmbientLight(0xffffff, 1)
+scene.add(ambientLight)
 
-const pointLight2 = new THREE.PointLight(0xff0000, 2)
-pointLight2.position.set(-1.86,1,-1.65)
-pointLight2.intensity = 10
-
-scene.add(pointLight2)
-
-// const light1 = gui.addFolder('Light 1')
-
-// light1.add(pointLight2.position, 'y').min(-3).max(3).step(0.01)
-// light1.add(pointLight2.position, 'x').min(-6).max(6).step(0.01)
-// light1.add(pointLight2.position, 'z').min(-3).max(3).step(0.01)
-// light1.add(pointLight2, 'intensity').min(0).max(10).step(0.01)
-
-// const pointLightHelper = new THREE.PointLightHelper(pointLight2, 1)
-// scene.add(pointLightHelper)
-
-//Light 3
-
-const pointLight3 = new THREE.PointLight(0xe1ff, 2)
-pointLight3.position.set(2.13,-3,-1.98)
-pointLight3.intensity = 6.8
-
-scene.add(pointLight3)
-
-// const light2 = gui.addFolder('Light 2')
-
-// light2.add(pointLight3.position, 'y').min(-3).max(3).step(0.01)
-// light2.add(pointLight3.position, 'x').min(-6).max(6).step(0.01)
-// light2.add(pointLight3.position, 'z').min(-3).max(3).step(0.01)
-// light2.add(pointLight3, 'intensity').min(0).max(10).step(0.01)
-
-// const light2Color = {
-//     color: 0xff0000
-// }
-
-// light2.addColor(light2Color, 'color')
-//     .onChange(() =>{
-//         pointLight3.color.set(light2Color.color)
-//     })
-
-// const pointLightHelper2 = new THREE.PointLightHelper(pointLight3, 1)
-// scene.add(pointLightHelper2)
-
-
- 
-/**
- * Sizes
- */
 
 const sizes = {
     width: window.innerWidth,
@@ -172,12 +133,19 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
 
     // Update objects
-    sphere.rotation.y = .5 * elapsedTime
+    sphere.rotation.z = .5 * elapsedTime
 
     sphere.rotation.y += .5 * (targetX - sphere.rotation.y)
     sphere.rotation.x += .05 * (targetY - sphere.rotation.x)
     sphere.position.z += -.05 * (targetY - sphere.rotation.x)
-
+    
+    sphereEARTH.position.y = -1
+    sphereEARTH.rotation.y = .5 * elapsedTime
+    sphereEARTH.rotation.y += .5 * (targetX - sphereEARTH.rotation.y)
+    sphereEARTH.rotation.x += .05 * (targetY - sphereEARTH.rotation.x)
+    sphereEARTH.position.z += -.05 * (targetY - sphereEARTH.rotation.x)
+    
+    
     // Update Orbital Controls
     // controls.update()
 
