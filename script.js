@@ -2,7 +2,7 @@ const textureLoader = new THREE.TextureLoader()
 
 const normalTexture = textureLoader.load('./8k_earth.jpg')
 const normalTextureSun = textureLoader.load('./8k_sun.jpg')
-const normaltextureMoon = textureLoader.load('./8k_moon.jpg')
+//const normaltextureMoon = textureLoader.load('./8k_moon.jpg')
 const normaltextureMercury = textureLoader.load('./8k_mercury.jpg')
 const normaltextureSaturnRing = textureLoader.load('./8k_saturn_ring_alpha.png')
 const normaltextureVenus = textureLoader.load('./8k_venus_surface.jpg')
@@ -22,7 +22,7 @@ const Sungeometry = new THREE.SphereBufferGeometry(1, 64, 64)
 const Mercurygeometry = new THREE.SphereBufferGeometry(0.2,64,64)
 const Venusgeometry = new THREE.SphereBufferGeometry(0.25,64,64)
 const Earthgeometry = new THREE.SphereBufferGeometry(0.3, 64, 64)
-const Moongeometry = new THREE.SphereBufferGeometry(0.1, 64, 64)
+//const Moongeometry = new THREE.SphereBufferGeometry(0.1, 64, 64)
 const Marsgeometry = new THREE.SphereBufferGeometry(0.18, 64, 64)
 const Jupitergeometry = new THREE.SphereBufferGeometry(0.55, 64, 64)
 const Saturngeometry = new THREE.SphereBufferGeometry(0.45, 64, 64)
@@ -84,11 +84,11 @@ Neptunematerial.opacity = 0.9
 Neptunematerial.map = normaltextureNeptune;
 const sphereNeptune = new THREE.Mesh(Neptunegeometry,Neptunematerial)
 
-const Moonmaterial= new THREE.MeshStandardMaterial()
-Moonmaterial.opacity = 0.9
-Moonmaterial.roughness = 0.4
-Moonmaterial.map = normaltextureMoon;
-const sphereMoon = new THREE.Mesh(Moongeometry,Moonmaterial)
+//const Moonmaterial= new THREE.MeshStandardMaterial()
+//Moonmaterial.opacity = 0.9
+//Moonmaterial.roughness = 0.4
+//Moonmaterial.map = normaltextureMoon;
+//const sphereMoon = new THREE.Mesh(Moongeometry,Moonmaterial)
 
 const SaturnMaterial = new THREE.MeshStandardMaterial()
 SaturnMaterial.opacity = 0.9
@@ -105,7 +105,7 @@ const sphereSaturnRing = new THREE.Mesh(SaturnRinggeometry,SaturnRingMaterial)
 const sphere = new THREE.Mesh(Sungeometry,Sunmaterial)
 scene.add(sphere)
 scene.add(sphereEarth)
-sphereEarth.add(sphereMoon)
+//sphereEarth.add(sphereMoon)
 scene.add(sphereSaturn)
 sphereSaturn.add(sphereSaturnRing)
 scene.add(sphereMercury)
@@ -154,7 +154,7 @@ window.addEventListener('resize', () =>
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 0
 camera.position.y = 0
-camera.position.z = 2
+camera.position.z = 10
 scene.add(camera)
 
 // Controls
@@ -279,7 +279,7 @@ const tick = () =>
 
     sphereEarth.position.x = 5 * Math.cos(rotEarth)
     sphereEarth.position.y = 2.5 * Math.sin(rotEarth)
-    sphereMOON.position.x = -0.6
+    //sphereMOON.position.x = -0.6
 
     const rotMars = Date.now() * 0.0005;
     
