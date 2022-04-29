@@ -268,35 +268,34 @@ const tick = () =>
     sphereMercury.position.x = 2.5 * Math.cos(rotMercury)
     sphereMercury.position.y = 1.5 * Math.sin(rotMercury)
 
-    const rotVenus = Date.now() * 0.0007;
+    const rotVenus = Date.now() * 0.0008;
    
     sphereVenus.position.x = 3.5 * Math.cos(rotVenus)
     sphereVenus.position.y = 2 * Math.sin(rotVenus)
             
    
        
-    const rotEarth = Date.now() * 0.0006;
+    const rotEarth = Date.now() * 0.0007;
 
     sphereEarth.position.x = 5 * Math.cos(rotEarth)
     sphereEarth.position.y = 2.5 * Math.sin(rotEarth)
-    //sphereMOON.position.x = -0.6
 
-    const rotMars = Date.now() * 0.0005;
+    const rotMars = Date.now() * 0.0006;
     
     sphereMars.position.x = 6 * Math.cos(rotMars)
     sphereMars.position.y = 3.6 * Math.sin(rotMars)
 
-    const rotJupiter = Date.now() * 0.0004;
+    const rotJupiter = Date.now() * 0.0005;
     
     sphereJupiter.position.x = 7 * Math.cos(rotJupiter)
     sphereJupiter.position.y = 4.3 * Math.sin(rotJupiter)
 
-    const rotSaturn = Date.now() * 0.0003;
+    const rotSaturn = Date.now() * 0.0004;
    
     sphereSaturn.position.x = 8 * Math.cos(rotSaturn)
     sphereSaturn.position.y = 5.5 * Math.sin(rotSaturn)
 
-    const rotUranus = Date.now() * 0.00025;
+    const rotUranus = Date.now() * 0.0003;
   
     sphereUranus.position.x = 9 * Math.cos(rotUranus)
     sphereUranus.position.y = 6 * Math.sin(rotUranus)
