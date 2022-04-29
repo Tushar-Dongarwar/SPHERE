@@ -279,7 +279,7 @@ const tick = () =>
 
     sphereEarth.position.x = 5 * Math.cos(rotEarth)
     sphereEarth.position.y = 2.5 * Math.sin(rotEarth)
-   // sphereMOON.position.x = -0.6
+    sphereMOON.position.x = -0.6
 
     const rotMars = Date.now() * 0.0005;
     
