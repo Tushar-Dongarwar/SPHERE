@@ -17,7 +17,7 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
-const Sungeometry = new THREE.SphereBufferGeometry(1, 32, 32)
+const Sungeometry = new THREE.SphereBufferGeometry(0.6, 32, 32)
 const Mercurygeometry = new THREE.SphereBufferGeometry(0.25,32,32)
 const Venusgeometry = new THREE.SphereBufferGeometry(0.3,32,32)
 const Earthgeometry = new THREE.SphereBufferGeometry(0.35, 32, 32)
