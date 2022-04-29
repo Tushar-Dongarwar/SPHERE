@@ -146,7 +146,7 @@ window.addEventListener('resize', () =>
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 0
 camera.position.y = 0
-camera.position.z = 10
+camera.position.z = 2
 scene.add(camera)
 
 // Controls
@@ -274,13 +274,13 @@ const tick = () =>
 
     const rotMars = Date.now() * 0.0006;
     
-    sphereMars.position.x = 6 * Math.cos(rotMars)
-    sphereMars.position.y = 3.6 * Math.sin(rotMars)
+    sphereMars.position.x = 6.5 * Math.cos(rotMars)
+    sphereMars.position.y = 4 * Math.sin(rotMars)
 
     const rotJupiter = Date.now() * 0.0005;
     
     sphereJupiter.position.x = 7 * Math.cos(rotJupiter)
-    sphereJupiter.position.y = 4.3 * Math.sin(rotJupiter)
+    sphereJupiter.position.y = 4.5 * Math.sin(rotJupiter)
 
     const rotSaturn = Date.now() * 0.0004;
    
@@ -294,8 +294,8 @@ const tick = () =>
 
     const rotNeptune = Date.now() * 0.0002;
     
-    sphereNeptune.position.x = 9.7 * Math.cos(rotNeptune)
-    sphereNeptune.position.y = 6.7 * Math.sin(rotNeptune)
+    sphereNeptune.position.x = 10 * Math.cos(rotNeptune)
+    sphereNeptune.position.y = 7 * Math.sin(rotNeptune)
     
     // Update Orbital Controls
     // controls.update()
