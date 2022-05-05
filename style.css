@@ -1,17 +1,16 @@
-<body>
-<div class="background-image"></div>
-<body>
+<html>
+<head>
 <style>
-*{
+body{
+    
     margin:0;
     padding: 0;
-}
-.background-image
-{
-    background-image: url('./Star.webp');
+    background-image: url("Star.webp");
     background-size: contain;
     background-repeat: no-repeat;
     width: 200px;
     height:100vh;
 }
 </style>
+</head>
+</html>
